@@ -1,4 +1,7 @@
 import csv
+#The code make dictinary of users, for each user there is another dicitinary with all joures, and for each jouaner all the movies that the 
+#user saw in this janears
+#use this code for cycle gan 
 def load_data(data_path):
     '''
     As for bpr experiment, all ratings are removed.
