@@ -1,0 +1,14 @@
+import os
+
+def move_files():
+    folder_poster = "C:\\Users\\lera\\Desktop\\1108\\posters_0708\\"
+    folder_move = "C:\\Users\\lera\\Desktop\\1108\\poster_move\\"
+    counter = 43610
+    for i in range(43610, 45070):
+        path=folder_poster + str(i) + ".jpg"
+        path_move=folder_move+ str(i) + ".jpg"
+        #os.path.join()
+        os.rename(path, path_move)
+
+
+move_files()
