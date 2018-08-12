@@ -1,4 +1,5 @@
 import os
+#move files from one folder to another folder
 
 def move_files():
     folder_poster = "C:\\Users\\lera\\Desktop\\1108\\posters_0708\\"
