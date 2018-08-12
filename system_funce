@@ -12,4 +12,32 @@ def move_files():
         os.rename(path, path_move)
 
 
-move_files()
+#move_files()
+
+
+import os
+from os import listdir
+from os.path import isfile, join
+
+def read_from_txt(path):
+    with open(path) as f:
+        content = f.readlines()
+    # you may also want to remove whitespace characters like `\n` at the end of each line
+    content = [x.strip() for x in content]
+    return content
+
+def delete_image_from_file(content_list):
+    for file in content_list:
+        os.remove(file)
+
+#get the names of all files in folder
+def get_files_in_folder(mypath):
+    onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+    return onlyfiles
+
+
+# path="grey_images.txt"
+# content=read_from_txt(path)
+# delete_image_from_file(content)
+path="C:\\Users\\lerasht\\Desktop\\posters_0908"
+get_files_in_folder(path)
