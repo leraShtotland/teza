@@ -51,3 +51,35 @@ def absoluteFilePaths(path):
             list_abs_paths.append(os.path.join(path, name))
     return list_abs_paths
 
+
+
+
+#resize the whith and hight of the image
+
+    print(img.shape)
+    pixel_lists = img.reshape(img.shape[:-3] + (-1, 3))
+    print(pixel_lists.shape)
+    im.thumbnail(size, Image.ANTIALIAS)
+    img = img.astype('float32')
+
+    img_np= np.asarray(img)
+    img_reshape = np.reshape(img_np, (-1))
+    print(img_reshape.shape)
+    temp.append(img_reshape)
+
+for img_name in content:
+    directory = os.path.join("C:\\Users\\lerasht\\Desktop\\posters0503_1", img_name)
+    #filepaths.append(image_path)
+    filepaths.append(directory + "/" + img_name)
+
+filepaths = []
+for dir_, _, files in os.walk(directory):
+    for fileName in files:
+        # relDir = os.path.relpath(dir_, directory)
+        # relFile = os.path.join(relDir, fileName)
+        filepaths.append(directory + "/" + relFile)
+
+for i, fp in enumerate(filepaths):
+    img = imread(fp)  # / 255.0
+    img = imresize(img, (40, 40))
+    imsave(new_dir + "/" + str(i) + ".png", img)
