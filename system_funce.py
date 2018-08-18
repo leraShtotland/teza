@@ -41,3 +41,13 @@ def get_files_in_folder(mypath):
 # delete_image_from_file(content)
 path="C:\\Users\\lerasht\\Desktop\\posters_0908"
 get_files_in_folder(path)
+
+#return list with all the absolute paths in the directory
+#then we can open each image in the list
+def absoluteFilePaths(path):
+    list_abs_paths=[]
+    for path, subdirs, files in os.walk(path):
+        for name in files:
+            list_abs_paths.append(os.path.join(path, name))
+    return list_abs_paths
+
